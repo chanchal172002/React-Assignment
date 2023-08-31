@@ -1,38 +1,48 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.Image-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+  height: 80vh; 
+  margin: 10vh 10vw; 
+  overflow: hidden;
+}
+
+.Image {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
+}
+
+.Draggable-div {
+  position: absolute;
+  margin-top: 5px;
+  background-color: rgba(28, 28, 28, 0.5);
+  font-size: larger;
+  font-weight: 300;
+  color: white;
+  cursor: grab;
+  user-select: none;
+  overflow: hidden; 
+}
+
+.ResizableInput {
+  width: 100%;
+  min-width: 100px;
+  resize: both;
+  padding: 5px;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ResizableInput:empty::before {
+  content: attr(data-placeholder);
+  color: rgba(255, 255, 255, 0.5);
 }
